@@ -10,7 +10,7 @@ public class EnemyGenerator : MonoBehaviour
     public Transform[] spawnPoints;
     void Start()
     {
-        InvokeRepeating("SpawnEnemy", 0f, 3.0f);
+        InvokeRepeating("SpawnEnemy", 0f, 1.0f);
     }
 
     void SpawnEnemy()
