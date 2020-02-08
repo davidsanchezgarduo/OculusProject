@@ -11,6 +11,12 @@ public class Shooter : MonoBehaviour
     public float forceBullet;
     public bool isActive = false;
 
+    public XRGrabInteractable mInteractive;
+
+    void Start() {
+        mInteractive.OnSelectEnter.AddListener(Shoot);
+    }
+
     void Update()
     {
         /*if (Input.GetMouseButtonDown(0) && isActive)
@@ -21,6 +27,7 @@ public class Shooter : MonoBehaviour
     }
 
     public void Shoot(XRBaseInteractor obj) {
+        Debug.Log("Shoot");
         if (isActive)
         {
             tmpBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
