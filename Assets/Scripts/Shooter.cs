@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Shooter : MonoBehaviour
 {
@@ -11,7 +13,15 @@ public class Shooter : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && isActive)
+        /*if (Input.GetMouseButtonDown(0) && isActive)
+        //if(OVRInput.Get(Axis1D.PrimaryIndexTrigger) && isActive)
+        {
+            
+        }*/
+    }
+
+    public void Shoot(XRBaseInteractor obj) {
+        if (isActive)
         {
             tmpBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             tmpBullet.transform.up = transform.forward;

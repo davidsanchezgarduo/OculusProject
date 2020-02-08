@@ -38,6 +38,8 @@ public class EnemyController : MonoBehaviour
             {
                 enemyAnimator.SetFloat("Speed", 0f);
                 enemyAnimator.SetBool("Punch", true);
+                Destroy(this.gameObject);
+                UIVrController.instance.LessLives();
             }
             else
             {
@@ -67,7 +69,8 @@ public class EnemyController : MonoBehaviour
         collider.enabled = false;
         if (enemyAnimator.GetCurrentAnimatorStateInfo(0).IsName("Dead"))
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>().score += 1;
+            //GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>().score += 1;
+            UIVrController.instance.AddPoint();
             Destroy(this.gameObject);
         }
     }
