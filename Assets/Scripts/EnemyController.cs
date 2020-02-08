@@ -56,14 +56,14 @@ public class EnemyController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-        GetComponentInChildren<SkinnedMeshRenderer>().material = damageMaterial;
+        //GetComponentInChildren<SkinnedMeshRenderer>().material = damageMaterial;
     }
 
     public void Die()
     {
         enemyAnimator.SetTrigger("Dead");
         enemyAgent.isStopped = true;
-        GetComponentInChildren<SkinnedMeshRenderer>().material = deadMaterial;
+        //GetComponentInChildren<SkinnedMeshRenderer>().material = deadMaterial;
         dissolve.Play();
         Collider collider = GetComponent<CapsuleCollider>();
         collider.enabled = false;
